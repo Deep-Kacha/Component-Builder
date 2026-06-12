@@ -2,6 +2,9 @@
 
 Generate React + Tailwind components with AI and preview them live. Powered by the [Cursor SDK](https://cursor.com/docs/sdk/typescript).
 
+**Live demo:** [component-builder-three.vercel.app](https://component-builder-three.vercel.app)  
+**GitHub:** [github.com/Deep-Kacha/Component-Builder](https://github.com/Deep-Kacha/Component-Builder)
+
 ## Features
 
 - Chat UI to describe UI components in natural language
