@@ -56,7 +56,7 @@ The project includes `.cursor/mcp.json`. After setting `CURSOR_API_KEY` in `.env
 3. Add environment variable: `CURSOR_API_KEY`
 4. Deploy
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/PLACEHOLDER/Component-Builder&env=CURSOR_API_KEY&envDescription=Cursor%20API%20key%20for%20component%20generation&project-name=component-builder)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Deep-Kacha/Component-Builder&env=CURSOR_API_KEY&envDescription=Cursor%20API%20key%20for%20component%20generation&project-name=component-builder)
 
 ## Environment variables
 
