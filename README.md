@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Component Builder
 
-## Getting Started
+Generate React + Tailwind components with AI and preview them live. Powered by the [Cursor SDK](https://cursor.com/docs/sdk/typescript).
 
-First, run the development server:
+## Features
+
+- Chat UI to describe UI components in natural language
+- Live preview (Sandpack on secure origins, iframe fallback on LAN HTTP)
+- Code view with syntax highlighting and copy
+- MCP server (`generate_component` tool) for Cursor IDE
+- E2E tests with Playwright
+
+## Setup
+
+```bash
+npm install
+cp .env.local.example .env.local
+```
+
+Add your API key from [Cursor Dashboard → Integrations](https://cursor.com/dashboard/integrations):
+
+```
+CURSOR_API_KEY=your_key_here
+```
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). Generation takes about 25–35 seconds.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To test from other devices on your network, use the Network URL shown in the terminal (e.g. `http://192.168.x.x:3000`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start dev server (binds to `0.0.0.0`) |
+| `npm run build` | Production build |
+| `npm run start` | Start production server |
+| `npm run test:e2e` | Run Playwright tests (mocked API) |
+| `npm run test:api` | Smoke-test `/api/generate` |
+| `npm run mcp` | Start MCP server (stdio) |
+| `npm run mcp:verify` | Verify MCP tools register |
 
-To learn more about Next.js, take a look at the following resources:
+## MCP (Cursor IDE)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project includes `.cursor/mcp.json`. After setting `CURSOR_API_KEY` in `.env.local`, reload MCP in Cursor Settings. The `generate_component` tool will be available in chat.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy (Vercel)
 
-## Deploy on Vercel
+1. Push this repo to GitHub
+2. Import the project in [Vercel](https://vercel.com/new)
+3. Add environment variable: `CURSOR_API_KEY`
+4. Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/PLACEHOLDER/Component-Builder&env=CURSOR_API_KEY&envDescription=Cursor%20API%20key%20for%20component%20generation&project-name=component-builder)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Environment variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `CURSOR_API_KEY` | Yes | Cursor API key for cloud agent generation |
