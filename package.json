@@ -18,6 +18,7 @@
     "test:unit": "node --import tsx --test lib/**/*.test.ts"
   },
   "dependencies": {
+    "@babel/parser": "^7.29.7",
     "@codesandbox/sandpack-react": "^2.20.0",
     "@cursor/sdk": "^1.0.18",
     "@modelcontextprotocol/sdk": "^1.29.0",
